@@ -1,0 +1,842 @@
+{
+  "date": "2026-09-30",
+  "candidate": "c727fe8b158558332ab49bbca5c337797a57f433",
+  "base": "8b9c07b645a8156c23a1d2619267fc84ea879250",
+  "branch_url": "https://github.com/franck-meyer/fastify/tree/codex/hook-warning-transition-20260930",
+  "core": {
+    "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424",
+    "headSha": "c727fe8b158558332ab49bbca5c337797a57f433",
+    "conclusion": "success",
+    "createdAt": "2026-09-30T21:31:19Z",
+    "updatedAt": "2026-09-30T21:37:21Z",
+    "elapsed_seconds": 362,
+    "jobs": [
+      {
+        "name": "test-unit-custom",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110107469165",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2311,
+          "fail": 0,
+          "skipped": 4
+        }
+      },
+      {
+        "name": "quality-check / Lint Code",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110107469604",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "runtime_counts": {}
+      },
+      {
+        "name": "quality-check / Check Licenses",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110107469644",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "runtime_counts": {}
+      },
+      {
+        "name": "quality-check / Dependency Review",
+        "conclusion": "skipped",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110107470921"
+      },
+      {
+        "name": "coverage-win / check-coverage",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110107722331",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "runtime_counts": {}
+      },
+      {
+        "name": "coverage-nix / check-coverage",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110107722350",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "runtime_counts": {}
+      },
+      {
+        "name": "test-unit (22, windows-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636309",
+        "node_versions": [
+          "v22.23.3"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2310,
+          "fail": 0,
+          "skipped": 5
+        }
+      },
+      {
+        "name": "test-unit (22, ubuntu-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636318",
+        "node_versions": [
+          "v22.23.3"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2312,
+          "fail": 0,
+          "skipped": 3
+        }
+      },
+      {
+        "name": "test-types",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636319",
+        "node_versions": [
+          "v20.20.2"
+        ],
+        "runtime_counts": {}
+      },
+      {
+        "name": "test-unit (24, macos-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636326",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2311,
+          "fail": 0,
+          "skipped": 4
+        }
+      },
+      {
+        "name": "Test pino compatibility (^9)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636338",
+        "node_versions": [
+          "v20.20.2"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2312,
+          "fail": 0,
+          "skipped": 3
+        }
+      },
+      {
+        "name": "test-unit (24, ubuntu-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636358",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2311,
+          "fail": 0,
+          "skipped": 4
+        }
+      },
+      {
+        "name": "test-unit (22, macos-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636361",
+        "node_versions": [
+          "v22.23.3"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2312,
+          "fail": 0,
+          "skipped": 3
+        }
+      },
+      {
+        "name": "test-unit (24, windows-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636370",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2309,
+          "fail": 0,
+          "skipped": 6
+        }
+      },
+      {
+        "name": "test-unit (26, ubuntu-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636397",
+        "node_versions": [
+          "v26.10.0"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2311,
+          "fail": 0,
+          "skipped": 4
+        }
+      },
+      {
+        "name": "test-unit (26, windows-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636403",
+        "node_versions": [
+          "v26.10.0"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2309,
+          "fail": 0,
+          "skipped": 6
+        }
+      },
+      {
+        "name": "test-unit (20, ubuntu-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636410",
+        "node_versions": [
+          "v20.20.2"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2312,
+          "fail": 0,
+          "skipped": 3
+        }
+      },
+      {
+        "name": "test-unit (20, macos-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636415",
+        "node_versions": [
+          "v20.20.2"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2312,
+          "fail": 0,
+          "skipped": 3
+        }
+      },
+      {
+        "name": "test-unit (26, macos-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636456",
+        "node_versions": [
+          "v26.10.0"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2311,
+          "fail": 0,
+          "skipped": 4
+        }
+      },
+      {
+        "name": "Test pino compatibility (^10)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636460",
+        "node_versions": [
+          "v20.20.2"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2312,
+          "fail": 0,
+          "skipped": 3
+        }
+      },
+      {
+        "name": "test-unit (20, windows-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110108636470",
+        "node_versions": [
+          "v20.20.2"
+        ],
+        "runtime_counts": {
+          "tests": 2315,
+          "pass": 2310,
+          "fail": 0,
+          "skipped": 5
+        }
+      },
+      {
+        "name": "package",
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110109314148",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "runtime_counts": {
+          "tests": 2,
+          "pass": 2,
+          "fail": 0,
+          "skipped": 0
+        }
+      },
+      {
+        "name": "automerge",
+        "conclusion": "skipped",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779963424/job/110109597590"
+      }
+    ]
+  },
+  "plugins": {
+    "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527",
+    "headSha": "c727fe8b158558332ab49bbca5c337797a57f433",
+    "conclusion": "failure",
+    "createdAt": "2026-09-30T21:31:19Z",
+    "updatedAt": "2026-09-30T21:33:36Z",
+    "elapsed_seconds": 137,
+    "os": "ubuntu-latest",
+    "jobs": [
+      {
+        "package": "@fastify/accepts",
+        "plugin_commit": "a0d0a93fdfff6f6684102fe25721d4cc189e02d5",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474935"
+      },
+      {
+        "package": "@fastify/accepts-serializer",
+        "plugin_commit": "c4e22ec68ff277abdf509a2d6c18776349991d45",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474352"
+      },
+      {
+        "package": "@fastify/auth",
+        "plugin_commit": "323913799822d9a56c7341eefacb79233574e7d1",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475604"
+      },
+      {
+        "package": "@fastify/autoload",
+        "plugin_commit": "fcfe8a2d0382c1cbd90a16b4e18239dece9b4aa7",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474249"
+      },
+      {
+        "package": "@fastify/awilix",
+        "plugin_commit": "6c31c9715c9cb1d50a037b72bfccd16389abdda9",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107473835"
+      },
+      {
+        "package": "@fastify/aws-lambda",
+        "plugin_commit": "402c265f911b18918af5d37452c0ff3d8b300a8a",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474407"
+      },
+      {
+        "package": "@fastify/basic-auth",
+        "plugin_commit": "3254bc2f8161e88171e81fd94b103b21b7eb1dc2",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107476007"
+      },
+      {
+        "package": "@fastify/bearer-auth",
+        "plugin_commit": "dffe778051c956c2a4252a19ab8c6b6d59fd26bc",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107473404"
+      },
+      {
+        "package": "@fastify/caching",
+        "plugin_commit": "a906d458b0b3f142317a3684af7226425c0b7ca6",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474870"
+      },
+      {
+        "package": "@fastify/circuit-breaker",
+        "plugin_commit": "2f5b89678f1c652275e03efbb87f8f33bcd8f29c",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475955"
+      },
+      {
+        "package": "@fastify/compress",
+        "plugin_commit": "98584bc380eb18b579c0e97d2c26271558c1e775",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474639"
+      },
+      {
+        "package": "@fastify/cookie",
+        "plugin_commit": "104aca792e25b3791782c4eabfde8d7fd6c89063",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474090"
+      },
+      {
+        "package": "@fastify/cors",
+        "plugin_commit": "7670483c5b47f5ed5ea1e7743ed2e406d86a1c96",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475191"
+      },
+      {
+        "package": "@fastify/csrf-protection",
+        "plugin_commit": "4bea96ff6b8a69c1eb060c2bf79348652050f5c9",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474365"
+      },
+      {
+        "package": "@fastify/env",
+        "plugin_commit": "8257897112329e5abb77b17c3977aeba4dc90594",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475310"
+      },
+      {
+        "package": "@fastify/etag",
+        "plugin_commit": "7fa0a453e6141f03de3de58d6e9dbb1e7f6928f1",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474544"
+      },
+      {
+        "package": "@fastify/express",
+        "plugin_commit": "575fe660209a0a14143ce37be3dd5963f61fcb13",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474619"
+      },
+      {
+        "package": "@fastify/flash",
+        "plugin_commit": "c6552fee33644b9f21140098fe0c366193d4d6fa",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475425"
+      },
+      {
+        "package": "@fastify/formbody",
+        "plugin_commit": "577fe7e3d9a79568e88918086c91884aabb0ddce",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474620"
+      },
+      {
+        "package": "@fastify/funky",
+        "plugin_commit": "9d0c97e25aa2ff138d8b635c8faa8ee63e436295",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107473943"
+      },
+      {
+        "package": "@fastify/helmet",
+        "plugin_commit": "8854d49a25b75d133a9df9ae3bf60fae4dfffb86",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475054"
+      },
+      {
+        "package": "@fastify/hotwire",
+        "plugin_commit": "937e0707bab759dcd169f64131aafe87687a76f5",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107473932"
+      },
+      {
+        "package": "@fastify/http-proxy",
+        "plugin_commit": "9bdfc2c4126542cfcd03f892da7ab1cf2095f853",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474239"
+      },
+      {
+        "package": "@fastify/jwt",
+        "plugin_commit": "0fa894171e3af59f26b96cac45ed8ab8c2cfc276",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474023"
+      },
+      {
+        "package": "@fastify/leveldb",
+        "plugin_commit": "b4133904f2a4a6e1925ae85ae579100879d6ff73",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474173"
+      },
+      {
+        "package": "@fastify/middie",
+        "plugin_commit": "310c7ef480bf1db2508316db7a42fdf274e6802e",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474431"
+      },
+      {
+        "package": "@fastify/multipart",
+        "plugin_commit": "e85cc1f50f6bb842668969445cb6e2ac107b6941",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474072"
+      },
+      {
+        "package": "@fastify/nextjs",
+        "plugin_commit": "048ae84a6513b181df84c38ade7d63185ed17534",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474218"
+      },
+      {
+        "package": "@fastify/oauth2",
+        "plugin_commit": "afddce426d303083965c6588cf0d51d2ecc51c69",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474852"
+      },
+      {
+        "package": "@fastify/one-line-logger",
+        "plugin_commit": "4a1fbe92b1bf10f09044be8e49a40d8c6d976f41",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474130"
+      },
+      {
+        "package": "@fastify/passport",
+        "plugin_commit": "36ec3c4a710a4cce7e6fb5b184a5b391e104de0c",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474282"
+      },
+      {
+        "package": "@fastify/reply-from",
+        "plugin_commit": "0a0dc503a19c13b921ed7395cf7cc844d7efe372",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474583"
+      },
+      {
+        "package": "@fastify/request-context",
+        "plugin_commit": "b8ddd35c5914ab36714dab77a7b9b368a78461f9",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474869"
+      },
+      {
+        "package": "@fastify/response-validation",
+        "plugin_commit": "4a09bfba1c7cb432bf2ec077beba85ff7582c7b7",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474184"
+      },
+      {
+        "package": "@fastify/routes",
+        "plugin_commit": "993f42abf4e392fa4950c63d7e99a66c4e30f8c4",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107473735"
+      },
+      {
+        "package": "@fastify/schedule",
+        "plugin_commit": "6c6ecd5d9bdf5f1bf68dca57156704bcd9123c45",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474025"
+      },
+      {
+        "package": "@fastify/secure-session",
+        "plugin_commit": "43b4c9feee21d8c03dbdac25905a8078f72ab414",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474988"
+      },
+      {
+        "package": "@fastify/sensible",
+        "plugin_commit": "d313b33cb6e9b3ea2ad1dcc427d12c5ee4abf0aa",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475109"
+      },
+      {
+        "package": "@fastify/session",
+        "plugin_commit": "6375983818c3539dea9066e0f8f34bd29a77dea8",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475110"
+      },
+      {
+        "package": "@fastify/sse",
+        "plugin_commit": "b65fa47e99dcc679a49ec7e97010da9c8f7198c0",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475515"
+      },
+      {
+        "package": "@fastify/static",
+        "plugin_commit": "2f0953a9bfbce11a370351beb67ec4a0cf8d91ba",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474261"
+      },
+      {
+        "package": "@fastify/swagger",
+        "plugin_commit": "f3ecd6365bd39da545b1537daa5b1956a09368ce",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "failure",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475072"
+      },
+      {
+        "package": "@fastify/swagger-ui",
+        "plugin_commit": "1c82befbd62e729545b681994ba6cad305e4caf6",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475315"
+      },
+      {
+        "package": "@fastify/throttle",
+        "plugin_commit": "53457e67cfb7716c643f6175d4a92ce95880f17e",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475440"
+      },
+      {
+        "package": "@fastify/type-provider-json-schema-to-ts",
+        "plugin_commit": "ed3349371ea30a1c0246549a0bed23b542aaabcc",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475555"
+      },
+      {
+        "package": "@fastify/type-provider-typebox",
+        "plugin_commit": "a8ebd1b4ce91dc43f9111911701261e666a09621",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474075"
+      },
+      {
+        "package": "@fastify/under-pressure",
+        "plugin_commit": "4bda6f5e1caca2abca119ad0706581df22441ffc",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474281"
+      },
+      {
+        "package": "@fastify/url-data",
+        "plugin_commit": "294232ad99b037b3fdb10ed9fc119a65cfa8de84",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475617"
+      },
+      {
+        "package": "@fastify/view",
+        "plugin_commit": "23e4c057ce880e28b9a08c1d41ba9a085249968f",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107474150"
+      },
+      {
+        "package": "@fastify/websocket",
+        "plugin_commit": "6d1dc9862379bc25bde1caad5aa4d9f37e2f7e3d",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107473967"
+      },
+      {
+        "package": "@fastify/zipkin",
+        "plugin_commit": "c352805936c396c64a11b7996ddfb3a8ece97385",
+        "node_versions": [
+          "v24.21.0"
+        ],
+        "FSTDEP023_log_count": 0,
+        "conclusion": "success",
+        "url": "https://github.com/franck-meyer/fastify/actions/runs/36779964527/job/110107475722"
+      }
+    ]
+  },
+  "swagger_baseline": {
+    "url": "https://github.com/franck-meyer/fastify/actions/runs/36780297429",
+    "headSha": "8b9c07b645a8156c23a1d2619267fc84ea879250",
+    "conclusion": "failure",
+    "createdAt": "2026-09-30T21:34:26Z",
+    "updatedAt": "2026-09-30T21:35:23Z",
+    "elapsed_seconds": 57,
+    "job": {
+      "name": "CITGM",
+      "conclusion": "failure",
+      "url": "https://github.com/franck-meyer/fastify/actions/runs/36780297429/job/110108571778"
+    },
+    "plugin_commit": "f3ecd6365bd39da545b1537daa5b1956a09368ce",
+    "node_version": "v24.21.0",
+    "os": "ubuntu-latest",
+    "tests": 298,
+    "passed": 297,
+    "failed": 1,
+    "matching_failure": "route options - QUERY method (OpenAPI 3.2.0): FST_ERR_ROUTE_METHOD_NOT_SUPPORTED: QUERY method is not supported."
+  },
+  "limitations": [
+    "Plugin testing covers the configured 51 plugin repositories on Node 24/Linux, not all plugins or all Node/OS combinations.",
+    "Swagger failed identically on the candidate and unchanged base; its workflow remains red.",
+    "No FSTDEP023 warnings were observed in plugin logs; this does not prove every plugin path was exercised.",
+    "Representative application prerelease testing and disposition of the Swagger baseline failure remain outstanding."
+  ]
+}

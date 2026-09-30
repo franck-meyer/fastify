@@ -1,0 +1,980 @@
+{
+  "run": {
+    "url": "https://github.com/franck-meyer/fastify/actions/runs/36782989085",
+    "headSha": "baad9e63aef4b7d1cda816c2543d51ed683d7cce",
+    "conclusion": "success",
+    "createdAt": "2026-09-30T22:00:30Z",
+    "updatedAt": "2026-09-30T22:03:21Z"
+  },
+  "candidate": "c727fe8b158558332ab49bbca5c337797a57f433",
+  "base": "8b9c07b645a8156c23a1d2619267fc84ea879250",
+  "swagger_source": "f3ecd6365bd39da545b1537daa5b1956a09368ce",
+  "swagger_fixture_patch": "swagger-query-compatibility.patch",
+  "identical_non_fastify_dependency_locks": true,
+  "dependency_lock_sha256": {
+    "baseline": "7239da4be16508690abc826016ccb5590f33966792caa28029efba2d72882dd7",
+    "candidate": "ea896c7b9fd1fddfc10f33b4d7030bf15e9594bf6b8ec6a0abbc2ac9d8c3a663"
+  },
+  "plugins": {
+    "@fastify/autoload": "6.5.0",
+    "@fastify/cookie": "11.1.2",
+    "@fastify/cors": "11.3.0",
+    "@fastify/jwt": "10.2.2",
+    "@fastify/multipart": "10.1.2",
+    "@fastify/swagger": "9.9.1",
+    "@fastify/swagger-ui": "6.1.1",
+    "@fastify/websocket": "11.3.1"
+  },
+  "jobs": [
+    {
+      "name": "Swagger with explicit QUERY test setup (candidate)",
+      "conclusion": "success",
+      "url": "https://github.com/franck-meyer/fastify/actions/runs/36782989085/job/110117583697"
+    },
+    {
+      "name": "applications",
+      "conclusion": "success",
+      "url": "https://github.com/franck-meyer/fastify/actions/runs/36782989085/job/110117583995"
+    },
+    {
+      "name": "Swagger with explicit QUERY test setup (baseline)",
+      "conclusion": "success",
+      "url": "https://github.com/franck-meyer/fastify/actions/runs/36782989085/job/110117584024"
+    }
+  ],
+  "swagger": [
+    {
+      "role": "baseline",
+      "runtime": {
+        "tests": 298,
+        "pass": 298,
+        "fail": 0,
+        "skipped": 0
+      },
+      "type_assertions_passed": 11,
+      "coverage": "All files                     |     100 |      100 |     100 |     100 |",
+      "node": "v24.21.0"
+    },
+    {
+      "role": "candidate",
+      "runtime": {
+        "tests": 298,
+        "pass": 298,
+        "fail": 0,
+        "skipped": 0
+      },
+      "type_assertions_passed": 11,
+      "coverage": "All files                     |     100 |      100 |     100 |     100 |",
+      "node": "v24.21.0"
+    }
+  ],
+  "applications": {
+    "baseline": {
+      "node": "v24.21.0",
+      "platform": "linux",
+      "smoke": [
+        {
+          "profile": {
+            "legacy": true,
+            "conditional": true,
+            "omitAbortRequest": false
+          },
+          "warnings": 0,
+          "aborts": 20,
+          "route_aborts": 20,
+          "websocket_messages": 50,
+          "duplicates": 0
+        },
+        {
+          "profile": {
+            "legacy": true,
+            "conditional": false,
+            "omitAbortRequest": false
+          },
+          "warnings": 0,
+          "aborts": 20,
+          "route_aborts": 20,
+          "websocket_messages": 50,
+          "duplicates": 0
+        },
+        {
+          "profile": {
+            "legacy": false,
+            "conditional": true,
+            "omitAbortRequest": false
+          },
+          "warnings": 0,
+          "aborts": 20,
+          "route_aborts": 20,
+          "websocket_messages": 50,
+          "duplicates": 0
+        }
+      ],
+      "warning_policies": [
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "default",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 61.95656600000001,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3767
+          }
+        },
+        {
+          "count": 20,
+          "style": "corrected",
+          "policy": "default",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 59.516630000000006,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3763
+          }
+        },
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "log",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 59.407881,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3764
+          }
+        },
+        {
+          "count": 20,
+          "style": "corrected",
+          "policy": "log",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 61.353016,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3766
+          }
+        },
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "throw-all",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 64.004943,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3766
+          }
+        },
+        {
+          "count": 20,
+          "style": "corrected",
+          "policy": "throw-all",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 65.287883,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3765
+          }
+        },
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "allow-hook",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 61.75260899999999,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3766
+          }
+        },
+        {
+          "count": 20,
+          "style": "corrected",
+          "policy": "allow-hook",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 60.797867,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3767
+          }
+        },
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "ci",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 61.931889999999996,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3768
+          }
+        },
+        {
+          "count": 20,
+          "style": "corrected",
+          "policy": "ci",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 61.14938900000001,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3765
+          }
+        },
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "default",
+          "flags": [
+            "--throw-deprecation"
+          ],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 60.954043999999996,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3766
+          }
+        }
+      ],
+      "startup": [
+        {
+          "GET_routes": 500,
+          "style": "legacy",
+          "samples": 3,
+          "median_boot_ms": 134.186,
+          "warning_count": 0,
+          "stderr_bytes": 0,
+          "boot_ms_samples": [
+            134.18627700000002,
+            131.373197,
+            135.998916
+          ]
+        },
+        {
+          "GET_routes": 500,
+          "style": "corrected",
+          "samples": 3,
+          "median_boot_ms": 134.48,
+          "warning_count": 0,
+          "stderr_bytes": 0,
+          "boot_ms_samples": [
+            140.50984599999998,
+            134.06741499999998,
+            134.479934
+          ]
+        },
+        {
+          "GET_routes": 2000,
+          "style": "legacy",
+          "samples": 3,
+          "median_boot_ms": 375.58,
+          "warning_count": 0,
+          "stderr_bytes": 0,
+          "boot_ms_samples": [
+            375.58048999999994,
+            374.423898,
+            378.747083
+          ]
+        },
+        {
+          "GET_routes": 2000,
+          "style": "corrected",
+          "samples": 3,
+          "median_boot_ms": 373.491,
+          "warning_count": 0,
+          "stderr_bytes": 0,
+          "boot_ms_samples": [
+            371.821951,
+            384.72516900000005,
+            373.490654
+          ]
+        }
+      ],
+      "load": {
+        "total_http_requests": 472392,
+        "total_seconds": 60.02000000000001,
+        "requests_per_second": 7870.58,
+        "rounds": [
+          {
+            "round": 0,
+            "duration": 20,
+            "requests": 154517,
+            "requestsPerSecond": 7725.85,
+            "latency": {
+              "average": 2.57,
+              "p99": 9,
+              "max": 21
+            },
+            "errors": 0,
+            "timeouts": 0,
+            "non2xx": 0,
+            "metrics": {
+              "requests": 171094,
+              "handlers": 170983,
+              "responses": 170984,
+              "duplicates": 0,
+              "uploads": 0,
+              "rootAborts": 100,
+              "routeAborts": 100,
+              "websocketMessages": 500,
+              "websockets": 0,
+              "warnings": 0,
+              "logBytes": 69875399,
+              "errorLogs": 0,
+              "cleanupErrors": 0,
+              "activeUploads": 0,
+              "sockets": 0,
+              "memory": {
+                "rss": 274722816,
+                "heapTotal": 166502400,
+                "heapUsed": 16330832,
+                "external": 4532271,
+                "arrayBuffers": 1264698
+              },
+              "resources": [
+                "PipeWrap",
+                "PipeWrap",
+                "TCPServerWrap"
+              ]
+            }
+          },
+          {
+            "round": 1,
+            "duration": 20.01,
+            "requests": 160128,
+            "requestsPerSecond": 8006.5,
+            "latency": {
+              "average": 2.46,
+              "p99": 9,
+              "max": 18
+            },
+            "errors": 0,
+            "timeouts": 0,
+            "non2xx": 0,
+            "metrics": {
+              "requests": 331357,
+              "handlers": 331136,
+              "responses": 331137,
+              "duplicates": 0,
+              "uploads": 0,
+              "rootAborts": 200,
+              "routeAborts": 200,
+              "websocketMessages": 1000,
+              "websockets": 0,
+              "warnings": 0,
+              "logBytes": 135423311,
+              "errorLogs": 0,
+              "cleanupErrors": 0,
+              "activeUploads": 0,
+              "sockets": 0,
+              "memory": {
+                "rss": 275378176,
+                "heapTotal": 158900224,
+                "heapUsed": 16390464,
+                "external": 3821739,
+                "arrayBuffers": 553470
+              },
+              "resources": [
+                "PipeWrap",
+                "PipeWrap",
+                "TCPServerWrap"
+              ]
+            }
+          },
+          {
+            "round": 2,
+            "duration": 20.01,
+            "requests": 157747,
+            "requestsPerSecond": 7887.9,
+            "latency": {
+              "average": 2.5,
+              "p99": 9,
+              "max": 19
+            },
+            "errors": 0,
+            "timeouts": 0,
+            "non2xx": 0,
+            "metrics": {
+              "requests": 489239,
+              "handlers": 488908,
+              "responses": 488909,
+              "duplicates": 0,
+              "uploads": 0,
+              "rootAborts": 300,
+              "routeAborts": 300,
+              "websocketMessages": 1500,
+              "websockets": 0,
+              "warnings": 0,
+              "logBytes": 199993666,
+              "errorLogs": 0,
+              "cleanupErrors": 0,
+              "activeUploads": 0,
+              "sockets": 4,
+              "memory": {
+                "rss": 274989056,
+                "heapTotal": 164143104,
+                "heapUsed": 16430512,
+                "external": 4751825,
+                "arrayBuffers": 1484920
+              },
+              "resources": [
+                "PipeWrap",
+                "PipeWrap",
+                "TCPServerWrap",
+                "TCPSocketWrap",
+                "TCPSocketWrap",
+                "TCPSocketWrap",
+                "TCPSocketWrap"
+              ]
+            }
+          }
+        ],
+        "before": {
+          "requests": 16442,
+          "handlers": 16441,
+          "responses": 16442,
+          "duplicates": 0,
+          "uploads": 0,
+          "rootAborts": 0,
+          "routeAborts": 0,
+          "websocketMessages": 0,
+          "websockets": 0,
+          "warnings": 0,
+          "logBytes": 6685878,
+          "errorLogs": 0,
+          "cleanupErrors": 0,
+          "activeUploads": 0,
+          "sockets": 0,
+          "memory": {
+            "rss": 224841728,
+            "heapTotal": 163356672,
+            "heapUsed": 17959640,
+            "external": 4463755,
+            "arrayBuffers": 1467486
+          },
+          "resources": [
+            "PipeWrap",
+            "PipeWrap",
+            "TCPServerWrap"
+          ]
+        },
+        "after_close": {
+          "requests": 489239,
+          "handlers": 488908,
+          "responses": 488909,
+          "duplicates": 0,
+          "uploads": 0,
+          "rootAborts": 300,
+          "routeAborts": 300,
+          "websocketMessages": 1500,
+          "websockets": 0,
+          "warnings": 0,
+          "logBytes": 199993666,
+          "errorLogs": 0,
+          "cleanupErrors": 0,
+          "activeUploads": 0,
+          "sockets": 0,
+          "memory": {
+            "rss": 274989056,
+            "heapTotal": 164143104,
+            "heapUsed": 16489728,
+            "external": 4751845,
+            "arrayBuffers": 339937
+          },
+          "resources": [
+            "PipeWrap",
+            "PipeWrap",
+            "TCPServerWrap"
+          ]
+        }
+      }
+    },
+    "candidate": {
+      "node": "v24.21.0",
+      "platform": "linux",
+      "smoke": [
+        {
+          "profile": {
+            "legacy": true,
+            "conditional": true,
+            "omitAbortRequest": true
+          },
+          "warnings": 13,
+          "aborts": 20,
+          "route_aborts": 20,
+          "websocket_messages": 50,
+          "duplicates": 0
+        },
+        {
+          "profile": {
+            "legacy": true,
+            "conditional": false,
+            "omitAbortRequest": false
+          },
+          "warnings": 11,
+          "aborts": 20,
+          "route_aborts": 20,
+          "websocket_messages": 50,
+          "duplicates": 0
+        },
+        {
+          "profile": {
+            "legacy": false,
+            "conditional": true,
+            "omitAbortRequest": true
+          },
+          "warnings": 0,
+          "aborts": 20,
+          "route_aborts": 20,
+          "websocket_messages": 50,
+          "duplicates": 0
+        }
+      ],
+      "warning_policies": [
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "default",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 16032,
+          "metrics": {
+            "bootMs": 65.322123,
+            "warningsAtBoot": 40,
+            "warningsAfterRequests": 40,
+            "logBytes": 3767
+          }
+        },
+        {
+          "count": 20,
+          "style": "corrected",
+          "policy": "default",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 60.68979300000001,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3762
+          }
+        },
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "log",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 16032,
+          "metrics": {
+            "bootMs": 68.170491,
+            "warningsAtBoot": 40,
+            "warningsAfterRequests": 40,
+            "logBytes": 22087
+          }
+        },
+        {
+          "count": 20,
+          "style": "corrected",
+          "policy": "log",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 62.81442199999999,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3767
+          }
+        },
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "throw-all",
+          "flags": [],
+          "exitCode": 1,
+          "stderrBytes": 2245,
+          "metrics": null
+        },
+        {
+          "count": 20,
+          "style": "corrected",
+          "policy": "throw-all",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 61.472959,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3763
+          }
+        },
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "allow-hook",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 16032,
+          "metrics": {
+            "bootMs": 66.665788,
+            "warningsAtBoot": 40,
+            "warningsAfterRequests": 40,
+            "logBytes": 22083
+          }
+        },
+        {
+          "count": 20,
+          "style": "corrected",
+          "policy": "allow-hook",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 64.36588400000001,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3767
+          }
+        },
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "ci",
+          "flags": [],
+          "exitCode": 1,
+          "stderrBytes": 16032,
+          "metrics": {
+            "bootMs": 65.22362799999999,
+            "warningsAtBoot": 40,
+            "warningsAfterRequests": 40,
+            "logBytes": 3767
+          }
+        },
+        {
+          "count": 20,
+          "style": "corrected",
+          "policy": "ci",
+          "flags": [],
+          "exitCode": 0,
+          "stderrBytes": 0,
+          "metrics": {
+            "bootMs": 63.75438799999999,
+            "warningsAtBoot": 0,
+            "warningsAfterRequests": 0,
+            "logBytes": 3765
+          }
+        },
+        {
+          "count": 20,
+          "style": "legacy",
+          "policy": "default",
+          "flags": [
+            "--throw-deprecation"
+          ],
+          "exitCode": 0,
+          "stderrBytes": 16032,
+          "metrics": {
+            "bootMs": 66.301495,
+            "warningsAtBoot": 40,
+            "warningsAfterRequests": 40,
+            "logBytes": 3762
+          }
+        }
+      ],
+      "startup": [
+        {
+          "GET_routes": 500,
+          "style": "legacy",
+          "samples": 3,
+          "median_boot_ms": 174.203,
+          "warning_count": 1000,
+          "stderr_bytes": 400352,
+          "boot_ms_samples": [
+            177.78517200000002,
+            174.20283899999998,
+            173.196136
+          ]
+        },
+        {
+          "GET_routes": 500,
+          "style": "corrected",
+          "samples": 3,
+          "median_boot_ms": 134.719,
+          "warning_count": 0,
+          "stderr_bytes": 0,
+          "boot_ms_samples": [
+            134.381644,
+            136.87283,
+            134.71906900000002
+          ]
+        },
+        {
+          "GET_routes": 2000,
+          "style": "legacy",
+          "samples": 3,
+          "median_boot_ms": 523.928,
+          "warning_count": 4000,
+          "stderr_bytes": 1603852,
+          "boot_ms_samples": [
+            523.927531,
+            527.3316480000001,
+            511.56009100000006
+          ]
+        },
+        {
+          "GET_routes": 2000,
+          "style": "corrected",
+          "samples": 3,
+          "median_boot_ms": 396.007,
+          "warning_count": 0,
+          "stderr_bytes": 0,
+          "boot_ms_samples": [
+            366.866847,
+            396.007269,
+            400.033217
+          ]
+        }
+      ],
+      "load": {
+        "total_http_requests": 464901,
+        "total_seconds": 60.010000000000005,
+        "requests_per_second": 7747.06,
+        "rounds": [
+          {
+            "round": 0,
+            "duration": 20.01,
+            "requests": 154366,
+            "requestsPerSecond": 7718.5,
+            "latency": {
+              "average": 2.55,
+              "p99": 9,
+              "max": 19
+            },
+            "errors": 0,
+            "timeouts": 0,
+            "non2xx": 0,
+            "metrics": {
+              "requests": 173058,
+              "handlers": 172947,
+              "responses": 172948,
+              "duplicates": 0,
+              "uploads": 0,
+              "rootAborts": 100,
+              "routeAborts": 100,
+              "websocketMessages": 500,
+              "websockets": 0,
+              "warnings": 13,
+              "logBytes": 70684886,
+              "errorLogs": 0,
+              "cleanupErrors": 0,
+              "activeUploads": 0,
+              "sockets": 0,
+              "memory": {
+                "rss": 284020736,
+                "heapTotal": 156016640,
+                "heapUsed": 16395792,
+                "external": 3260766,
+                "arrayBuffers": 339917
+              },
+              "resources": [
+                "PipeWrap",
+                "PipeWrap",
+                "TCPServerWrap"
+              ]
+            }
+          },
+          {
+            "round": 1,
+            "duration": 20,
+            "requests": 156941,
+            "requestsPerSecond": 7847.6,
+            "latency": {
+              "average": 2.57,
+              "p99": 9,
+              "max": 20
+            },
+            "errors": 0,
+            "timeouts": 0,
+            "non2xx": 0,
+            "metrics": {
+              "requests": 330134,
+              "handlers": 329913,
+              "responses": 329914,
+              "duplicates": 0,
+              "uploads": 0,
+              "rootAborts": 200,
+              "routeAborts": 200,
+              "websocketMessages": 1000,
+              "websockets": 0,
+              "warnings": 13,
+              "logBytes": 134929059,
+              "errorLogs": 0,
+              "cleanupErrors": 0,
+              "activeUploads": 0,
+              "sockets": 0,
+              "memory": {
+                "rss": 284340224,
+                "heapTotal": 164667392,
+                "heapUsed": 16429960,
+                "external": 3984363,
+                "arrayBuffers": 857304
+              },
+              "resources": [
+                "PipeWrap",
+                "PipeWrap",
+                "TCPServerWrap"
+              ]
+            }
+          },
+          {
+            "round": 2,
+            "duration": 20,
+            "requests": 153594,
+            "requestsPerSecond": 7680.2,
+            "latency": {
+              "average": 2.58,
+              "p99": 9,
+              "max": 22
+            },
+            "errors": 0,
+            "timeouts": 0,
+            "non2xx": 0,
+            "metrics": {
+              "requests": 483863,
+              "handlers": 483532,
+              "responses": 483533,
+              "duplicates": 0,
+              "uploads": 0,
+              "rootAborts": 300,
+              "routeAborts": 300,
+              "websocketMessages": 1500,
+              "websockets": 0,
+              "warnings": 13,
+              "logBytes": 197801229,
+              "errorLogs": 0,
+              "cleanupErrors": 0,
+              "activeUploads": 0,
+              "sockets": 6,
+              "memory": {
+                "rss": 284712960,
+                "heapTotal": 162308096,
+                "heapUsed": 16500376,
+                "external": 4251609,
+                "arrayBuffers": 983197
+              },
+              "resources": [
+                "PipeWrap",
+                "PipeWrap",
+                "TCPServerWrap",
+                "TCPSocketWrap",
+                "TCPSocketWrap",
+                "TCPSocketWrap",
+                "TCPSocketWrap",
+                "TCPSocketWrap",
+                "TCPSocketWrap"
+              ]
+            }
+          }
+        ],
+        "before": {
+          "requests": 18557,
+          "handlers": 18556,
+          "responses": 18557,
+          "duplicates": 0,
+          "uploads": 0,
+          "rootAborts": 0,
+          "routeAborts": 0,
+          "websocketMessages": 0,
+          "websockets": 0,
+          "warnings": 13,
+          "logBytes": 7552565,
+          "errorLogs": 0,
+          "cleanupErrors": 0,
+          "activeUploads": 0,
+          "sockets": 0,
+          "memory": {
+            "rss": 241094656,
+            "heapTotal": 162832384,
+            "heapUsed": 18065528,
+            "external": 3761063,
+            "arrayBuffers": 764733
+          },
+          "resources": [
+            "PipeWrap",
+            "PipeWrap",
+            "TCPServerWrap"
+          ]
+        },
+        "after_close": {
+          "requests": 483863,
+          "handlers": 483532,
+          "responses": 483533,
+          "duplicates": 0,
+          "uploads": 0,
+          "rootAborts": 300,
+          "routeAborts": 300,
+          "websocketMessages": 1500,
+          "websockets": 0,
+          "warnings": 13,
+          "logBytes": 197801229,
+          "errorLogs": 0,
+          "cleanupErrors": 0,
+          "activeUploads": 0,
+          "sockets": 0,
+          "memory": {
+            "rss": 284712960,
+            "heapTotal": 162308096,
+            "heapUsed": 16560376,
+            "external": 4251629,
+            "arrayBuffers": 339937
+          },
+          "resources": [
+            "PipeWrap",
+            "PipeWrap",
+            "TCPServerWrap"
+          ]
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Constructed fixtures using real released plugins, not the user's deployed applications or staging environment.",
+    "Five representative warning policies were tested; no private production configuration was supplied.",
+    "Three 20-second traffic rounds on one Linux runner per build; no long-duration soak or production capacity guarantee.",
+    "Swagger passes with an explicit QUERY registration in the test fixture; the upstream unmodified suite and prior failed run are unchanged."
+  ]
+}

@@ -182,9 +182,14 @@ unexpected startup failure. The migration guide provides an explicit CI gate.
    plus zero/one-parameter async abort hooks in every registration form.
    Registration, real client abort, HEAD, plugin boot, and warning-policy tests
    cover the compatibility boundaries.
-5. Pending: supported Node/OS and external core-plugin CI, followed by a
-   prerelease application trial. Strict single-hook enforcement requires a
-   separate major-release decision after that warning period.
+5. CI executed: all 12 Node/OS combinations passed; 50 of 51 core plugins
+   passed. Swagger's failure reproduced on unchanged Fastify with the same
+   plugin revision. See the [release validation report](Hook-Release-Validation.md).
+   [Application validation](Hook-Application-Validation.md) subsequently passed
+   smoke, warning-policy, and controlled traffic checks. Swagger's complete
+   suite passes on both builds with an explicit method registration in its
+   test fixture. Upstream adoption and an actual application deployment trial
+   remain pending. Strict enforcement requires a separate major-release decision.
 
 To add a built-in hook, define its storage and registration policies in the
 catalogue, add its explicit storage/context and execution integration, update
@@ -240,8 +245,12 @@ Validated on Node.js v25.6.1:
 - Markdown lint for the updated design, reference, and migration documentation
   passes, as does `git diff --check`.
 
-Supported Node/OS CI and external plugin compatibility remain release gates;
-they have not been run as part of this local verification.
+Subsequent [release validation](Hook-Release-Validation.md) ran the supported
+Node/OS matrix and external core-plugin suite on the committed candidate.
+Core CI passed; the original plugin suite has one baseline-confirmed Swagger
+failure. The [application validation report](Hook-Application-Validation.md)
+records complete passing Swagger suites with a test-fixture correction,
+application smoke checks, warning measurements, and controlled traffic results.
 
 Startup, plugin registration, constructor costs, and request injection were
 measured in the [constructor evaluation](Hook-Initialization.md). The
