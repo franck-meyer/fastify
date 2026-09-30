@@ -1,0 +1,18 @@
+{
+  "name": "fastify-hook-release-validation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Isolated application fixtures for the hook warning transition",
+  "dependencies": {
+    "@fastify/autoload": "6.5.0",
+    "@fastify/cookie": "11.1.2",
+    "@fastify/cors": "11.3.0",
+    "@fastify/jwt": "10.2.2",
+    "@fastify/multipart": "10.1.2",
+    "@fastify/swagger": "9.9.1",
+    "@fastify/swagger-ui": "6.1.1",
+    "@fastify/websocket": "11.3.1",
+    "autocannon": "8.0.0",
+    "ws": "8.22.0"
+  }
+}

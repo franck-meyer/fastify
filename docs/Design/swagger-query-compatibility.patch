@@ -1,0 +1,11 @@
+diff --git a/test/spec/openapi/route.test.js b/test/spec/openapi/route.test.js
+--- a/test/spec/openapi/route.test.js
++++ b/test/spec/openapi/route.test.js
+@@ -106,6 +106,7 @@ test('route options - QUERY method (OpenAPI 3.2.0)', async (t) => {
+ test('route options - QUERY method (OpenAPI 3.2.0)', async (t) => {
+   t.plan(3)
+   const fastify = Fastify()
++  fastify.addHttpMethod('QUERY', { hasBody: true })
+ 
+   await fastify.register(fastifySwagger, {
+     openapi: { openapi: '3.2.0' }
