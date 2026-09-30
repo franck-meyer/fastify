@@ -222,6 +222,18 @@ server.addHook('onRequestAbort', async function (request) {
   expect(request).type.toBe<FastifyRequest>()
 })
 
+server.addHook('onRequestAbort', async function () {
+  expect(this).type.toBe<FastifyInstance>()
+})
+
+server.post('/abort-without-request', {
+  onRequestAbort: async () => {}
+}, async () => 'ok')
+
+server.post('/abort-array-without-request', {
+  onRequestAbort: [async () => {}]
+}, async () => 'ok')
+
 server.addHook('onRegister', async (instance, opts) => {
   expect(instance).type.toBe<FastifyInstance>()
   expect(opts).type.toBe<RegisterOptions & FastifyPluginOptions>()
@@ -471,9 +483,8 @@ server.get('/', {
     expect(request).type.toBe<NoInferRequest>()
     expect(reply).type.toBe<NoInferReply>()
   },
-  onRequestAbort: async (request, done) => {
+  onRequestAbort: async (request) => {
     expect(request).type.toBe<NoInferRequest>()
-    expect(done).type.toBe<HookHandlerDoneFunction>()
   },
   preParsing: async (request, reply, payload) => {
     expect(request).type.toBe<NoInferRequest>()
@@ -516,7 +527,8 @@ server.get('/', {
   expect(reply).type.toBe<FastifyReply>()
 })
 
-// TODO: Should throw errors
+// These native async signatures are rejected at runtime (see hook-registration.test.js).
+// TypeScript cannot distinguish them from regular functions returning promises.
 // server.get('/', { onRequest: async (request, reply, done) => {} }, async (request, reply) => {})
 // server.get('/', { onRequestAbort: async (request, done) => {} }, async (request, reply) => {})
 // server.get('/', { preParsing: async (request, reply, payload, done) => {} }, async (request, reply) => {})

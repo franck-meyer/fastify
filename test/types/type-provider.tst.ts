@@ -349,47 +349,47 @@ server.withTypeProvider<TypeBoxProvider>().get(
         z: Type.Boolean()
       })
     },
-    preHandler: async (req, reply, done) => {
+    preHandler: async (req, reply) => {
       expect(req.body.x).type.toBe<number>()
       expect(req.body.y).type.toBe<string>()
       expect(req.body.z).type.toBe<boolean>()
     },
-    preParsing: async (req, reply, payload, done) => {
+    preParsing: async (req, reply, payload) => {
       expect(req.body.x).type.toBe<number>()
       expect(req.body.y).type.toBe<string>()
       expect(req.body.z).type.toBe<boolean>()
     },
-    preSerialization: async (req, reply, payload, done) => {
+    preSerialization: async (req, reply, payload) => {
       expect(req.body.x).type.toBe<number>()
       expect(req.body.y).type.toBe<string>()
       expect(req.body.z).type.toBe<boolean>()
     },
-    preValidation: async (req, reply, done) => {
+    preValidation: async (req, reply) => {
       expect(req.body.x).type.toBe<number>()
       expect(req.body.y).type.toBe<string>()
       expect(req.body.z).type.toBe<boolean>()
     },
-    onError: async (req, reply, error, done) => {
+    onError: async (req, reply, error) => {
       expect(req.body.x).type.toBe<number>()
       expect(req.body.y).type.toBe<string>()
       expect(req.body.z).type.toBe<boolean>()
     },
-    onRequest: async (req, reply, done) => {
+    onRequest: async (req, reply) => {
       expect(req.body.x).type.toBe<number>()
       expect(req.body.y).type.toBe<string>()
       expect(req.body.z).type.toBe<boolean>()
     },
-    onResponse: async (req, reply, done) => {
+    onResponse: async (req, reply) => {
       expect(req.body.x).type.toBe<number>()
       expect(req.body.y).type.toBe<string>()
       expect(req.body.z).type.toBe<boolean>()
     },
-    onTimeout: async (req, reply, done) => {
+    onTimeout: async (req, reply) => {
       expect(req.body.x).type.toBe<number>()
       expect(req.body.y).type.toBe<string>()
       expect(req.body.z).type.toBe<boolean>()
     },
-    onSend: async (req, reply, payload, done) => {
+    onSend: async (req, reply, payload) => {
       expect(req.body.x).type.toBe<number>()
       expect(req.body.y).type.toBe<string>()
       expect(req.body.z).type.toBe<boolean>()

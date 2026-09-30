@@ -1,0 +1,224 @@
+--- a/lib/hook-definitions.js
++++ b/lib/hook-definitions.js
+@@ -9,6 +9,8 @@
+     name: 'onTimeout',
+     category: 'lifecycle',
+     storage: 'inherited',
++    storageOrder: 12,
++    contextOrder: 3,
+     registration: 'deferred',
+     isAsyncArityValid: withoutDone
+   },
+@@ -16,6 +18,8 @@
+     name: 'onRequest',
+     category: 'lifecycle',
+     storage: 'inherited',
++    storageOrder: 0,
++    contextOrder: 0,
+     registration: 'deferred',
+     isAsyncArityValid: withoutDone
+   },
+@@ -23,6 +27,8 @@
+     name: 'preParsing',
+     category: 'lifecycle',
+     storage: 'inherited',
++    storageOrder: 1,
++    contextOrder: null,
+     registration: 'deferred',
+     isAsyncArityValid: withPayloadWithoutDone
+   },
+@@ -30,6 +36,8 @@
+     name: 'preValidation',
+     category: 'lifecycle',
+     storage: 'inherited',
++    storageOrder: 2,
++    contextOrder: null,
+     registration: 'deferred',
+     isAsyncArityValid: withoutDone
+   },
+@@ -37,6 +45,8 @@
+     name: 'preSerialization',
+     category: 'lifecycle',
+     storage: 'inherited',
++    storageOrder: 3,
++    contextOrder: 6,
+     registration: 'deferred',
+     isAsyncArityValid: withPayloadWithoutDone
+   },
+@@ -44,6 +54,8 @@
+     name: 'preHandler',
+     category: 'lifecycle',
+     storage: 'inherited',
++    storageOrder: 4,
++    contextOrder: 4,
+     registration: 'deferred',
+     isAsyncArityValid: withoutDone
+   },
+@@ -51,6 +63,8 @@
+     name: 'onSend',
+     category: 'lifecycle',
+     storage: 'inherited',
++    storageOrder: 6,
++    contextOrder: 1,
+     registration: 'deferred',
+     isAsyncArityValid: withPayloadWithoutDone
+   },
+@@ -58,6 +72,8 @@
+     name: 'onResponse',
+     category: 'lifecycle',
+     storage: 'inherited',
++    storageOrder: 5,
++    contextOrder: 5,
+     registration: 'deferred',
+     isAsyncArityValid: withoutDone
+   },
+@@ -65,6 +81,8 @@
+     name: 'onError',
+     category: 'lifecycle',
+     storage: 'inherited',
++    storageOrder: 7,
++    contextOrder: 2,
+     registration: 'deferred',
+     isAsyncArityValid: withPayloadWithoutDone
+   },
+@@ -72,6 +90,8 @@
+     name: 'onRequestAbort',
+     category: 'lifecycle',
+     storage: 'inherited',
++    storageOrder: 13,
++    contextOrder: 7,
+     registration: 'deferred',
+     isAsyncArityValid: requestOnly
+   },
+@@ -79,6 +99,8 @@
+     name: 'onRoute',
+     category: 'application',
+     storage: 'inherited',
++    storageOrder: 8,
++    contextOrder: null,
+     registration: 'immediate',
+     isAsyncArityValid: withoutDone
+   },
+@@ -86,6 +108,8 @@
+     name: 'onRegister',
+     category: 'application',
+     storage: 'inherited',
++    storageOrder: 9,
++    contextOrder: null,
+     registration: 'deferred',
+     isAsyncArityValid: withoutDone
+   },
+@@ -93,6 +117,8 @@
+     name: 'onReady',
+     category: 'application',
+     storage: 'local',
++    storageOrder: 10,
++    contextOrder: null,
+     registration: 'immediate',
+     isAsyncArityValid: noArguments
+   },
+@@ -100,6 +126,8 @@
+     name: 'onListen',
+     category: 'application',
+     storage: 'local',
++    storageOrder: 11,
++    contextOrder: null,
+     registration: 'immediate',
+     isAsyncArityValid: noArguments
+   },
+@@ -107,6 +135,8 @@
+     name: 'preClose',
+     category: 'application',
+     storage: 'local',
++    storageOrder: 14,
++    contextOrder: null,
+     registration: 'deferred',
+     isAsyncArityValid: withoutDone
+   },
+@@ -114,10 +144,18 @@
+     name: 'onClose',
+     category: 'application',
+     storage: 'external',
++    storageOrder: null,
++    contextOrder: null,
+     registration: 'avvio',
+     isAsyncArityValid: withoutDone
+   }
+ ].map(Object.freeze))
++
++// Preserve the explicit constructors' insertion order, including boot-only context slots.
++const storedHooks = Object.freeze(hookDefinitions.filter(definition => definition.storage !== 'external')
++  .sort((a, b) => a.storageOrder - b.storageOrder).map(definition => definition.name))
++const contextHooks = Object.freeze(hookDefinitions.filter(definition => definition.contextOrder !== null)
++  .sort((a, b) => a.contextOrder - b.contextOrder).map(definition => definition.name))
+ 
+ const definitionsByName = new Map(hookDefinitions.map(definition => [definition.name, definition]))
+ const lifecycleHooks = hookDefinitions.filter(definition => definition.category === 'lifecycle')
+@@ -161,6 +199,8 @@
+ }
+ 
+ module.exports = {
++  storedHooks,
++  contextHooks,
+   lifecycleHooks,
+   supportedHooks,
+   inheritedHooks,
+--- a/lib/hooks.js
++++ b/lib/hooks.js
+@@ -4,6 +4,7 @@
+   lifecycleHooks,
+   supportedHooks,
+   inheritedHooks,
++  storedHooks,
+   getHookRegistration,
+   validateHookAsync
+ } = require('./hook-definitions')
+@@ -24,22 +25,7 @@
+ } = require('./symbols')
+ 
+ function Hooks () {
+-  // Keep the storage layout explicit; registration policy lives in hook-definitions.js.
+-  this.onRequest = []
+-  this.preParsing = []
+-  this.preValidation = []
+-  this.preSerialization = []
+-  this.preHandler = []
+-  this.onResponse = []
+-  this.onSend = []
+-  this.onError = []
+-  this.onRoute = []
+-  this.onRegister = []
+-  this.onReady = []
+-  this.onListen = []
+-  this.onTimeout = []
+-  this.onRequestAbort = []
+-  this.preClose = []
++  for (const hook of storedHooks) this[hook] = []
+ }
+ 
+ Hooks.prototype = Object.create(null)
+--- a/lib/context.js
++++ b/lib/context.js
+@@ -1,4 +1,6 @@
+ 'use strict'
++
++const { contextHooks } = require('./hook-definitions')
+ 
+ const {
+   kFourOhFourContext,
+@@ -46,14 +48,7 @@
+   this.Reply = server[kReply]
+   this.Request = server[kRequest]
+   this.contentTypeParser = server[kContentTypeParser]
+-  this.onRequest = null
+-  this.onSend = null
+-  this.onError = null
+-  this.onTimeout = null
+-  this.preHandler = null
+-  this.onResponse = null
+-  this.preSerialization = null
+-  this.onRequestAbort = null
++  for (const hook of contextHooks) this[hook] = null
+   this.config = config
+   this.errorHandler = errorHandler || server[kErrorHandler]
+   this.requestIdLogLabel = requestIdLogLabel || server[kOptions].requestIdLogLabel

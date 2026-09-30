@@ -43,7 +43,7 @@ const Context = require('./lib/context.js')
 const decorator = require('./lib/decorate')
 const ContentTypeParser = require('./lib/content-type-parser.js')
 const SchemaController = require('./lib/schema-controller')
-const { Hooks, hookRunnerApplication, supportedHooks } = require('./lib/hooks')
+const { Hooks, hookRunnerApplication, supportedHooks, getHookRegistration, validateHookAsync } = require('./lib/hooks')
 const { createChildLogger, defaultChildLoggerFactory, createLogger } = require('./lib/logger-factory')
 const pluginUtils = require('./lib/plugin-utils.js')
 const { getGenReqId, reqIdGenFactory } = require('./lib/req-id-gen-factory.js')
@@ -574,27 +574,12 @@ function fastify (serverOptions) {
       throw new errorCodes.FST_ERR_HOOK_INVALID_HANDLER(name, fn)
     }
 
-    if (name === 'onSend' || name === 'preSerialization' || name === 'onError' || name === 'preParsing') {
-      if (fn.constructor.name === 'AsyncFunction' && fn.length === 4) {
-        throw new errorCodes.FST_ERR_HOOK_INVALID_ASYNC_HANDLER()
-      }
-    } else if (name === 'onReady' || name === 'onListen') {
-      if (fn.constructor.name === 'AsyncFunction' && fn.length !== 0) {
-        throw new errorCodes.FST_ERR_HOOK_INVALID_ASYNC_HANDLER()
-      }
-    } else if (name === 'onRequestAbort') {
-      if (fn.constructor.name === 'AsyncFunction' && fn.length !== 1) {
-        throw new errorCodes.FST_ERR_HOOK_INVALID_ASYNC_HANDLER()
-      }
-    } else {
-      if (fn.constructor.name === 'AsyncFunction' && fn.length === 3) {
-        throw new errorCodes.FST_ERR_HOOK_INVALID_ASYNC_HANDLER()
-      }
-    }
+    validateHookAsync(name, fn)
 
-    if (name === 'onClose') {
+    const registration = getHookRegistration(name)
+    if (registration === 'avvio') {
       this.onClose(fn.bind(this))
-    } else if (name === 'onReady' || name === 'onListen' || name === 'onRoute') {
+    } else if (registration === 'immediate') {
       this[kHooks].add(name, fn)
     } else {
       this.after((err, done) => {

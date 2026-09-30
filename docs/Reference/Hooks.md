@@ -305,6 +305,11 @@ fastify.addHook('onRequestAbort', async (request) => {
   await asyncMethod()
 })
 ```
+An async hook may omit the request parameter when it is unused: `async () => {}`
+is valid with `addHook`, as a single route hook, and inside a route hook array.
+Async abort hooks must not declare `done`; the callback form remains
+`(request, done) => { ... }`.
+
 The `onRequestAbort` hook is executed when a client closes the connection before
 the entire request has been processed. Therefore, you will not be able to send
 data to the client.
@@ -718,13 +723,26 @@ You can declare one or more custom lifecycle hooks ([onRequest](#onrequest),
 [onResponse](#onresponse), [preParsing](#preparsing),
 [preValidation](#prevalidation), [preHandler](#prehandler),
 [preSerialization](#preserialization), [onSend](#onsend),
-[onTimeout](#ontimeout), and [onError](#onerror)) hook(s) that will be
+[onTimeout](#ontimeout), [onError](#onerror), and
+[onRequestAbort](#onrequestabort)) hook(s) that will be
 **unique** for the route. If you do so, those hooks are always executed as the
 last hook in their category.
 
 This can be useful if you need to implement authentication, where the
 [preParsing](#preparsing) or [preValidation](#prevalidation) hooks are exactly
 what you need. Multiple route-level hooks can also be specified as an array.
+
+Async hooks should use the documented signature without `done`. Single route
+hooks with deprecated native async signatures emit `FSTDEP023` and remain
+accepted during the warning transition. Hook arrays and `addHook` retain their
+existing `FST_ERR_HOOK_INVALID_ASYNC_HANDLER` errors, except that async
+`onRequestAbort` now accepts zero or one parameter in every form.
+
+Checks run after `onRoute` callbacks modify route options. Automatic HEAD
+registration still converts `onSend` into an array and can reject its invalid
+async signature. See the [route hook validation migration guide](
+../Guides/Migration-Guide-Route-Hook-Validation.md) for transition details,
+HEAD behavior, and an optional CI check.
 
 ```js
 fastify.addHook('onRequest', (request, reply, done) => {

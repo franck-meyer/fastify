@@ -279,7 +279,7 @@ type LowerCaseHTTPMethods = 'delete' | 'get' | 'head' | 'patch' | 'post' | 'put'
     method: method as HTTPMethods,
     config: { foo: 'bar', bar: 100 },
     prefixTrailingSlash: 'slash',
-    onRequest: async (req, res, done) => { // these handlers are tested in `hooks.test-d.ts`
+    onRequest: async (req, res) => { // these handlers are tested in `hooks.tst.ts`
       expect(req.body).type.toBe<BodyInterface>()
       expect(req.query).type.toBe<QuerystringInterface>()
       expect(req.params).type.toBe<ParamsInterface>()
@@ -293,7 +293,7 @@ type LowerCaseHTTPMethods = 'delete' | 'get' | 'head' | 'patch' | 'post' | 'put'
       expect(req.routeOptions.config.url).type.toBe<string>()
       expect(req.routeOptions.config.method).type.toBe<HTTPMethods | HTTPMethods[]>()
     },
-    preParsing: async (req, res, payload, done) => {
+    preParsing: async (req, res, payload) => {
       expect(req.body).type.toBe<BodyInterface>()
       expect(req.query).type.toBe<QuerystringInterface>()
       expect(req.params).type.toBe<ParamsInterface>()
@@ -307,10 +307,8 @@ type LowerCaseHTTPMethods = 'delete' | 'get' | 'head' | 'patch' | 'post' | 'put'
       expect(req.routeOptions.config.url).type.toBe<string>()
       expect(req.routeOptions.config.method).type.toBe<HTTPMethods | HTTPMethods[]>()
       expect(payload).type.toBe<RequestPayload>()
-      expect(done).type.toBeAssignableTo<(err?: FastifyError | null, res?: RequestPayload) => void>()
-      expect(done).type.toBeAssignableTo<(err?: NodeJS.ErrnoException) => void>()
     },
-    preValidation: async (req, res, done) => {
+    preValidation: async (req, res) => {
       expect(req.body).type.toBe<BodyInterface>()
       expect(req.query).type.toBe<QuerystringInterface>()
       expect(req.params).type.toBe<ParamsInterface>()
@@ -324,7 +322,7 @@ type LowerCaseHTTPMethods = 'delete' | 'get' | 'head' | 'patch' | 'post' | 'put'
       expect(req.routeOptions.config.url).type.toBe<string>()
       expect(req.routeOptions.config.method).type.toBe<HTTPMethods | HTTPMethods[]>()
     },
-    preHandler: async (req, res, done) => {
+    preHandler: async (req, res) => {
       expect(req.body).type.toBe<BodyInterface>()
       expect(req.query).type.toBe<QuerystringInterface>()
       expect(req.params).type.toBe<ParamsInterface>()
@@ -338,7 +336,7 @@ type LowerCaseHTTPMethods = 'delete' | 'get' | 'head' | 'patch' | 'post' | 'put'
       expect(req.routeOptions.config.url).type.toBe<string>()
       expect(req.routeOptions.config.method).type.toBe<HTTPMethods | HTTPMethods[]>()
     },
-    onResponse: async (req, res, done) => {
+    onResponse: async (req, res) => {
       expect(req.body).type.toBe<BodyInterface>()
       expect(req.query).type.toBe<QuerystringInterface>()
       expect(req.params).type.toBe<ParamsInterface>()
@@ -353,7 +351,7 @@ type LowerCaseHTTPMethods = 'delete' | 'get' | 'head' | 'patch' | 'post' | 'put'
       expect(req.routeOptions.config.method).type.toBe<HTTPMethods | HTTPMethods[]>()
       expect(res.statusCode).type.toBe<number>()
     },
-    onError: async (req, res, error, done) => {
+    onError: async (req, res, error) => {
       expect(req.body).type.toBe<BodyInterface>()
       expect(req.query).type.toBe<QuerystringInterface>()
       expect(req.params).type.toBe<ParamsInterface>()
@@ -367,7 +365,7 @@ type LowerCaseHTTPMethods = 'delete' | 'get' | 'head' | 'patch' | 'post' | 'put'
       expect(req.routeOptions.config.url).type.toBe<string>()
       expect(req.routeOptions.config.method).type.toBe<HTTPMethods | HTTPMethods[]>()
     },
-    preSerialization: async (req, res, payload, done) => {
+    preSerialization: async (req, res, payload) => {
       expect(req.body).type.toBe<BodyInterface>()
       expect(req.query).type.toBe<QuerystringInterface>()
       expect(req.params).type.toBe<ParamsInterface>()
@@ -381,7 +379,7 @@ type LowerCaseHTTPMethods = 'delete' | 'get' | 'head' | 'patch' | 'post' | 'put'
       expect(req.routeOptions.config.url).type.toBe<string>()
       expect(req.routeOptions.config.method).type.toBe<HTTPMethods | HTTPMethods[]>()
     },
-    onSend: async (req, res, payload, done) => {
+    onSend: async (req, res, payload) => {
       expect(req.body).type.toBe<BodyInterface>()
       expect(req.query).type.toBe<QuerystringInterface>()
       expect(req.params).type.toBe<ParamsInterface>()

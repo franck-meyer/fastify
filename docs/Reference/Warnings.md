@@ -10,6 +10,7 @@
     - [FSTWRN004](#FSTWRN004)
   - [Fastify Deprecation Codes](#fastify-deprecation-codes)
     - [FSTDEP022](#FSTDEP022)
+    - [FSTDEP023](#FSTDEP023)
 
 ## Warnings
 
@@ -47,13 +48,18 @@ Disabling warnings is not recommended and may cause unexpected behavior.
 
 ### Fastify Deprecation Codes
 
-Deprecation codes are supported by the Node.js CLI options:
+Warnings using Node's `DeprecationWarning` category support these CLI options:
 
 - [--no-deprecation](https://nodejs.org/api/cli.html#no-deprecation)
 - [--throw-deprecation](https://nodejs.org/api/cli.html#throw-deprecation)
 - [--trace-deprecation](https://nodejs.org/api/cli.html#trace-deprecation)
 
+`FSTDEP022` and `FSTDEP023` use the `FastifyWarning` category. Use
+`--trace-warnings` for their stack traces; `--throw-deprecation` does not make
+them fatal. For an explicit CI policy for route-hook warnings, see the
+[migration guide](../Guides/Migration-Guide-Route-Hook-Validation.md).
 
 | Code | Description | How to solve | Discussion |
 | ---- | ----------- | ------------ | ---------- |
 | <a id="FSTDEP022">FSTDEP022</a> | You are trying to access the deprecated router options on top option properties. | Use `options.routerOptions`. | [#5985](https://github.com/fastify/fastify/pull/5985)
+| <a id="FSTDEP023">FSTDEP023</a> | A single route hook uses a deprecated native async signature. Registration and execution remain accepted during the transition. | Remove unused `done` parameters, or use a regular callback function if calling `done`. Async `onRequestAbort` accepts zero or one parameter. | [Migration guide](../Guides/Migration-Guide-Route-Hook-Validation.md) |

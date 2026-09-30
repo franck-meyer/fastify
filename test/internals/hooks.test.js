@@ -1,9 +1,56 @@
 'use strict'
 
 const { test } = require('node:test')
-const { Hooks } = require('../../lib/hooks')
+const { Hooks, buildHooks, supportedHooks } = require('../../lib/hooks')
 const { default: fastify } = require('../../fastify')
 const noop = () => {}
+
+test('hook storage covers supported hooks and preserves its layout', t => {
+  const hooks = new Hooks()
+  t.assert.deepStrictEqual(Object.keys(hooks), [
+    'onRequest', 'preParsing', 'preValidation', 'preSerialization', 'preHandler',
+    'onResponse', 'onSend', 'onError', 'onRoute', 'onRegister', 'onReady',
+    'onListen', 'onTimeout', 'onRequestAbort', 'preClose'
+  ])
+  t.assert.deepStrictEqual(Object.keys(hooks).sort(), supportedHooks.filter(name => name !== 'onClose').sort())
+  t.assert.strictEqual(Object.hasOwn(hooks, 'onClose'), false)
+})
+
+test('buildHooks preserves inheritance and isolates parent, child, and sibling arrays', t => {
+  const parent = new Hooks()
+  const second = () => {}
+  for (const name of Object.keys(parent)) {
+    parent.add(name, noop)
+    parent.add(name, second)
+  }
+
+  const child = buildHooks(parent)
+  const sibling = buildHooks(parent)
+  t.assert.deepStrictEqual(Object.keys(child), Object.keys(parent))
+  t.assert.strictEqual(Object.hasOwn(child, 'onClose'), false)
+
+  for (const name of Object.keys(parent)) {
+    const inherited = !['onReady', 'onListen', 'preClose'].includes(name)
+    const expected = inherited ? [noop, second] : []
+    t.assert.deepStrictEqual(child[name], expected, name)
+    t.assert.deepStrictEqual(sibling[name], expected, name)
+    t.assert.notStrictEqual(child[name], parent[name], name)
+    t.assert.notStrictEqual(child[name], sibling[name], name)
+
+    child.add(name, second)
+    t.assert.deepStrictEqual(parent[name], [noop, second], name)
+    t.assert.deepStrictEqual(sibling[name], expected, name)
+    parent.add(name, noop)
+    t.assert.deepStrictEqual(child[name], expected.concat(second), name)
+  }
+
+  const grandchild = buildHooks(child)
+  for (const name of Object.keys(parent)) {
+    const inherited = !['onReady', 'onListen', 'preClose'].includes(name)
+    t.assert.deepStrictEqual(grandchild[name], inherited ? child[name] : [], name)
+    t.assert.notStrictEqual(grandchild[name], child[name], name)
+  }
+})
 
 test('hooks should have 4 array with the registered hooks', t => {
   const hooks = new Hooks()
